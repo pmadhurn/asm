@@ -277,7 +277,7 @@ mount d d:\masm
 d:
 masm filename.asm
 link filename.obj
-tf filename.exe
+td filename.exe
 
 
 
