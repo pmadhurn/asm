@@ -1,0 +1,486 @@
+assembly codes : 
+
+
+8085 : 
+
+1 : add 2 8bit nos:
+	
+LXI H,0000H
+MOV A,M
+INX H
+ADD M
+INX H
+MOV M,A
+HLT
+	
+
+2 SUBTRACT TWO 8-BIT NUMBERS. 
+
+LXI H,0000H
+MOV A,M
+INX H
+SUB M
+INX H
+MOV M,A
+HLT
+
+
+3: PROGRAM TO MULTIPLY TWO 8-BIT NUMBERS
+
+MVI A,00H
+MVI B,00H
+MVI C,00H
+MVI D,00H
+MVI H,00H
+MVI L,00H
+LXI H,0000H
+MOV B,M
+INX H
+MOV C,M
+LOOP:ADD B
+JNC NEXT
+INR D
+NEXT: DCR C
+JNZ LOOP
+STA 0002H
+MOV A,D
+STA 0003H
+HLT
+
+memory : 0000=12h
+	 0001=03h
+
+
+4: PROGRAM TO DIVIDE TWO 8-BIT NUMBERS. 
+
+LXI H,0000H
+MOV B,M
+INX H
+MOV C,M
+MOV C,M
+MOV A,B
+LOOP: SUB C
+INR D 
+CMP C
+JNC LOOP
+STA 0002H
+MOV A,D
+STA 0003H
+HLT
+
+memory : 0000=36h
+	 0001=03h
+
+5 : PROGRAM TO FIND 1’s COMPLEMENT OF AN  8-BIT NUMBERS. 
+
+LXI H,0000H
+MOV A,M
+CMA
+STA 0001H
+HLT
+
+6: PROGRAM TO FIND 2’s COMPLEMENT OF AN  8-BIT NUMBERS. 
+
+LXI H,0000H
+MOV A,M
+CMA
+ADI 01H
+STA 0001H
+HLT
+
+7 :	PROGRAM TO FIND LARGEST OF 5 VALUES(8-BIT NUMBERS).
+
+	 
+LXI H,0000H
+MVI C,04H
+MOV A,M
+LOOP:INX H
+CMP M
+JNC SKIP
+MOV A,M
+SKIP:DCR C
+JNZ LOOP
+STA 0005H
+INX H
+HLT
+
+8 : WRITE A PROGRAM TO FIND SMALLEST OF 5 VALUES(8-BIT NUMBERS). 
+
+LXI H,0000H
+MVI C,04H
+MOV A,M
+LOOP:INX H
+CMP M
+JC SKIP
+MOV A,M
+SKIP:DCR C
+JNZ LOOP
+STA 0005H
+INX H
+HLT
+
+9 : PROGRAM TO FIND THE NUMBER OF 1’s IN A BINARY 8 BIT VALUE.
+
+
+MVI B, 00H    
+MVI C, 08H   
+LDA 0000H   
+LOOP:RAL          
+JNC SKIP      
+INR B         
+SKIP:DCR C         
+JNZ LOOP     
+MOV A, B     
+STA 0001H     
+HLT  
+
+
+10 : PROGRAM TO SPLIT A 8-BIT NUMBER INTO 2,4-BITS NUMBERS AND STORE THEM AT DIFFERENT LOCATIONS.
+
+
+MVI B,4AH
+MOV A,B
+MVI C,F0H
+ANA C
+RRC
+RRC
+RRC
+RRC
+STA 0001H
+MOV A,B
+MVI C,0FH
+ANA C
+STA 0002H
+HLT
+
+
+11 :  program in 8085 to count the number of 1s in a 16-bit number.
+
+MVI B,00H
+MVI C,08H
+LDA 0000H
+LOOP:RAL
+JNC SKIP
+INR B
+SKIP:DCR C
+JNZ LOOP
+MVI C,08H
+LDA 0001H
+LOO:RAL
+JNC SKI
+INR B
+SKI:DCRC
+JNZ LOO
+MOV A,B
+STA 0003H
+HLT
+
+
+12 :  program in 8085 to swap two 8-bit numbers.
+
+LDA 0000H
+MOV H,A
+LDA 0001H
+MOV D,A
+XCHG
+MOV A,H
+STA 0000H
+MOV A,D
+STA 0001H
+HLT
+
+
+13 : program in 8085 to convert binary to gray code.
+
+LDA 0000H
+MOV B,A
+RAR
+XRA B
+STA 0001H
+HLT
+
+
+14 : program in 8085 to convert BCD to HEX.
+
+LXI H,0000
+MOV A,M
+ADD A
+MOV B,A
+ADD A
+ADD A
+ADD B
+INX H
+ADD M
+INX H
+MOV M,A
+HL
+
+
+15 : program in 8085 to convert HEX TO BCD.
+
+LDA 0000H
+MVI B, 0AH
+MVI C, 00H
+LOOP:CMP B
+JC NEXT
+SUB B
+INR C
+JMP LOOP
+NEXT:STA 0002H
+MOV A,C
+STA 0001H
+HLT
+
+
+16 : program to add 3 One Bit numbers to memory and store XOR value at another memory location.
+A7 = A2 ⊕ A5 ⊕ A6
+
+LDA 0000H
+MOV B, A
+ANI 04H
+RRC
+RRC
+MOV C, A
+MOV A, B
+ANI 20H
+RRC
+RRC
+RRC
+XRA C
+MOV C, A
+MOV A, B
+ANI 40H
+RRC
+RRC
+RRC
+RRC
+XRA C
+RLC
+RLC
+RLC
+RLC
+RLC
+RLC
+RLC
+MOV C, A
+MOV A, B
+ANI 7FH
+ORA C
+STA 0001H
+HLT
+
+
+
+8086
+
+mount d d:\masm
+d:
+masm filename.asm
+link filename.obj
+tf filename.exe
+
+
+
+17 :  program to add two 16 bit numbers in 8086
+
+Assume cs:code
+code segment
+start : mov ax,0304h
+	mov bx,010h
+	add ax,bx
+	int 3
+	code ends
+end start
+
+
+18 : program to subtract two 16 bit numbers in 8086
+
+Assume cs:code
+code segment
+start : mov ax,0304h
+	mov bx,010h
+	sub ax,bx
+	int 3
+	code ends
+end start
+
+19 : practical to multiply two numbers in 8086
+
+ASSUME CS : CODE
+CODE SEGMENT
+START : MOV AX, 0005H
+MOV BX, 0002H
+MUL BX
+INT 3
+CODE ENDS
+END START
+
+20 : program to divide two numbers in 8086
+
+
+ASSUME CS:CODE
+CODE SEGMENT
+START:  MOV AX, 000CH  
+        MOV BL, 03H    
+        DIV BL       
+        INT 3       
+CODE ENDS
+END START
+
+
+21 : program to find largest number in a given array using MASM, 8086
+
+DATA SEGMENT
+ARR1 DB 05H,10H,15H,25H,20H  
+DATA ENDS
+CODE SEGMENT
+ASSUME CS:CODE,DS:DATA
+START:
+    MOV AX,DATA      
+    MOV DS,AX
+    MOV CX,05H       
+    LEA SI,ARR1     
+    MOV AL,[SI]      
+    MOV BL,AL        
+    INC SI           
+    DEC CX             
+LOOP1:
+    MOV AL,[SI]      
+    CMP AL,BL        
+    JLE NEXT         
+    MOV BL,AL        
+NEXT:
+    INC SI           
+    DEC CX           
+    JNZ LOOP1         
+    INT 3            
+CODE ENDS
+END START
+	
+22 :   program to find the smallest number in a given array in MASM, 8086
+
+
+DATA SEGMENT
+ARR1 DB 05H,10H,15H,25H,20H  
+DATA ENDS
+CODE SEGMENT
+ASSUME CS:CODE,DS:DATA
+START:
+    MOV AX,DATA      
+    MOV DS,AX
+    MOV CX,05H       
+    LEA SI,ARR1      
+    MOV AL,[SI]      
+    MOV BL,AL       
+    INC SI         
+    DEC CX               
+LOOP1:
+    MOV AL,[SI]      
+    CMP AL,BL        
+    JGE NEXT         
+    MOV BL,AL        
+NEXT:
+    INC SI           
+    DEC CX           
+    JNZ LOOP1            
+    INT 3            
+CODE ENDS
+END START
+
+
+23 : program to find if the given number is negative or positive in MASM, 8086
+
+
+DATA SEGMENT
+    NUM DB -10  
+DATA ENDS
+CODE SEGMENT
+ASSUME CS:CODE, DS:DATA
+START:
+    MOV AX, DATA      
+    MOV DS, AX
+    MOV AL, NUM       
+    TEST AL, AL       
+    JS NEGATIVE      
+POSITIVE:
+    MOV BX, 1         
+    JMP DONE           
+NEGATIVE:
+    MOV BX, -1         
+DONE: 
+    INT 3             
+CODE ENDS
+END START
+
+
+24 : program to find square of a given number in MASM, 8086
+
+ASSUME CS:CODE
+CODE SEGMENT
+START:	MOV AX,09H
+		MOV BX,AX
+		MUL BX
+INT 3
+CODE ENDS
+END START
+
+25 : program to find cube of a given number using MASM in 8086
+
+
+ASSUME CS:CODE
+CODE SEGMENT
+START:	MOV AX,09H
+		MOV BX,AX
+		MUL BX
+		MUL BX
+INT 3
+CODE ENDS
+END START
+
+
+26 :  program to calculate the  average of given 5 elements in an array in MASM, 8086
+
+DATA SEGMENT
+ARR1 DB 02H,04H,06H,08H,0AH
+DATA ENDS
+
+CODE SEGMENT
+ASSUME CS:CODE,DS:DATA
+START:
+	MOV AX,DATA
+	MOV DS,AX
+	MOV CX,05H
+	LEA SI,ARR1
+	MOV AX,0H
+LOOP1:
+	ADD AL,[SI]
+	INC SI
+	LOOP LOOP1
+	MOV BL,05H
+	DIV BL
+	MOV BH,AH
+	MOV BL,AL
+INT 3
+CODE ENDS
+END START
+
+27 : program to find factorial of a number in 8086
+
+CODE SEGMENT
+ASSUME CS:CODE
+START:
+    MOV AX, 5
+    MOV BX, AX
+L1: 
+    DEC BX
+    CMP BX, 1
+    JE DONE
+    MUL BX
+    JMP L1
+DONE:
+    INT 3
+CODE ENDS
+END START
+
+
+
