@@ -1,0 +1,1532 @@
+SAMPLE PROGRAM : 
+Code Text
+
+Q1 Demonstrate functions and all categories of functions python. 
+# Python Function with Arguments, and Return Value def Addition(a, b): 
+Sum = a + b 
+return Sum 
+print("After Calling the Function:", Addition(25, 45)) 
+# Python Function with Arguments, and NO Return Value def Multiplications(a, b): 
+Multi = a * b 
+print("After Calling the Function:", Multi) 
+Multiplications(10, 20) 
+# Python Function with No Arguments, and with Return Value def Multiplication(): 
+a = 10 
+b = 25 
+Multi = a * b 
+return Multi 
+print("After Calling the Multiplication : ", Multiplication()) 
+# Python Function with No Arguments, and No Return Value def Adding(): 
+a = 20 
+b = 30 
+Sum = a + b 
+print("After Calling :", Sum) 
+Adding() 
+After Calling the Function: 70 
+After Calling the Function: 200 
+After Calling the Multiplication : 250 
+After Calling : 50 
+Q2 Demonstrate arrays (Insertion, Deletion, arithmetic operations). 
+arr = [2,5,10,'Peter'] 
+arr.append(7) 
+print("After inserting : " , arr) 
+arr.remove(10) 
+print("After removing : " , arr) 
+arr1 = [1,2,3] 
+arr2 = [4,5,6] 
+add=[0,0,0] 
+sub=[0,0,0] 
+mult=[0,0,0] 
+div=[0,0,0] 
+mod=[0,0,0] 
+for i in range(0,3): 
+add[i] = arr1[i] + arr2[i] 
+sub[i] = arr1[i] - arr2[i] 
+mult[i]= arr1[i] * arr2[i] 
+mod[i] = arr1[i] % arr2[i] 
+div[i] = arr1[i] / arr2[i] 
+print('The Answers are :- ') 
+print("Addition is : " , add ) 
+print("Subtraction is : " , sub ) 
+print("Multiplication is : " , mult ) 
+print("Division is : " , div ) 
+print("Modulo is : " , mod ) 
+After inserting : [2, 5, 10, 'Peter', 7] 
+After removing : [2, 5, 'Peter', 7] 
+The Answers are :-  
+Addition is : [5, 7, 9] 
+Subtraction is : [-3, -3, -3] 
+Multiplication is : [4, 10, 18] 
+Division is : [0.25, 0.4, 0.5] 
+Modulo is : [1, 2, 3] 
+Q3 Perform Addition, Multiplication for Vectors and Matrices. 
+# Vectors 
+arr1 = [1,2,3] 
+arr2 = [4,5,6] 
+add=[0,0,0] 
+mul=[0,0,0] 
+for i in range(0,3): 
+add[i] = arr1[i] + arr2[i] 
+mul[i] = arr1[i] * arr2[i] 
+print("Addition is : " , add ) 
+print("Multiplication is : " , mul ) 
+Addition is : [5, 7, 9] 
+Multiplication is : [4, 10, 18] 
+# Matrix Addition 
+X = [[1,2,3], [4,5,6], [7,8,9]] 
+Y = [[9,8,7], [6,5,4], [3,2,1]]
+result = [[0,0,0], [0,0,0], [0,0,0]] 
+# iterate through rows 
+for i in range(len(X)): 
+# iterate through columns 
+for j in range(len(X[0])): 
+result[i][j] = X[i][j] + Y[i][j] 
+for r in result: 
+print(r) 
+[10, 10, 10] 
+[10, 10, 10] 
+[10, 10, 10] 
+# Matrix Multiplication 
+A = [[1,2,3], [4,5,6], [7,8,9]] 
+B = [[9,8,7], [6,5,4], [3,2,1]] 
+result = [[0,0,0], [0,0,0], [0,0,0]] 
+# iterating by row of A 
+for i in range(len(A)): 
+# iterating by column by B 
+for j in range(len(B[0])): 
+# iterating by rows of B 
+for k in range(len(B)): 
+result[i][j] += A[i][k] * B[k][j] 
+for r in result: 
+print(r) 
+[30, 24, 18] 
+[84, 69, 54] 
+[138, 114, 90] 
+Q4 Practical based on Strings (Length finding, change specific character, palindrome, concatenation) 
+str1="Hello World" 
+print("Length of the string is: ",len(str1)) 
+result = str1.replace("l", "L") 
+print(result) 
+
+
+
+rev=str1[::-1] 
+if(str1==rev): 
+print("It is a palindrome") 
+else:
+print("It is not a palindrome") 
+str2="Welcome" 
+print("Concatenation: ",str1+" "+str2) 
+Length of the string is: 11 
+HeLLo WorLd 
+It is not a palindrome 
+Concatenation: Hello World Welcome 
+Q5 Create a menu driven program to show various operators supported by python. 
+# Arithmetic Operators 
+def arithmeticOps(a, b): 
+sum = a + b 
+return sum 
+# Comparison Operators 
+def ComparisonOps(a, b): 
+compare = (a == b) 
+return compare 
+# Logical Operators 
+def LogicalOps(a, b): 
+log = a and b 
+return log 
+# Assignment Operators 
+def AssignmentOps(a, b): 
+b += a 
+return b 
+# MAIN 
+print("PYTHON OPERATORS\n") 
+print("1. Arithmetic Operators") 
+print("2. Comparison Operators") 
+print("3. Logical Operators") 
+print("4. Assignment Operators ") 
+print("5. Exit") 
+while True: 
+ch = int(input("\nEnter your Choice: ")) 
+if ch == 1: 
+a = int(input("Enter First Number: ")) 
+b = int(input("Enter Second Number: ")) 
+print("Result is", arithmeticOps(a, b)) 
+elif ch == 2: 
+a = int(input("Enter First Number: ")) 
+b = int(input("Enter Second Number: ")) 
+print("Result is", ComparisonOps(a, b))
+elif ch == 3: 
+a = True 
+b = False 
+print("Result is", LogicalOps(a, b)) 
+elif ch == 4: 
+a = int(input("Enter First Number: ")) 
+b = int(input("Enter Second Number: ")) 
+print("Result is", AssignmentOps(a, b)) 
+elif ch == 5: 
+print("Exit") 
+break 
+else: 
+print("Please enter a valid choice") 
+PYTHON OPERATORS 
+1. Arithmetic Operators 
+2. Comparison Operators 
+3. Logical Operators 
+4. Assignment Operators  
+5. Exit 
+Enter your Choice: 1 
+Enter First Number: 3 
+Enter Second Number: 7 
+Result is 10 
+Enter your Choice: 2 
+Enter First Number: 5 
+Enter Second Number: 5 
+Result is True 
+Enter your Choice: 3 
+Result is False 
+Enter your Choice: 4 
+Enter First Number: 1 
+Enter Second Number: 1 
+Result is 2 
+Enter your Choice: 5 
+Exit 
+Q6 Write a python program to find out if a given number is even or odd using a user defined function. 
+num = int (input ("Enter a number: ")) 
+def odd_even(): 
+if (num % 2) == 0: 
+print ("The number is even") 
+else:
+print ("The number is odd") 
+odd_even() 
+Enter a number: 10 
+The number is even 
+Q7 1) Addition of first 15 numbers using loop. 
+num = 15 
+sum = 0 
+while(num > 0): 
+sum += num 
+num -= 1 
+print("The sum of first 15 numbers is", sum) The sum is 120 
+OR 
+n=15 
+sum = 0 
+# loop from 1 to n 
+for num in range(1, n + 1, 1): 
+sum += num 
+print("Sum of first", n, "numbers is", sum) Sum of first 15 numbers is: 120 
+2) Addition of any 15 numbers using a loop. 
+n=15 
+sum=0 
+for i in range(1,n): 
+print(i) 
+for i in range(1,n): 
+sum+=i 
+print(sum) 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+11 
+12 
+13
+14 
+105 
+Q8 Write a python program to check if the entered year is leap year or not. 
+year = int(input("Enter a year : ")) 
+if(year % 4 == 0 and year % 100 != 0) or (year % 400 ==0): print("Leap year") 
+else: 
+print("Not a leap year") 
+Enter a year : 2022 
+Not a leap year 
+Q9 Write a Python program which accepts the user's first and last name and print them in reverse order with a space between them. 
+firstname = input("Enter your first name : ") 
+lastname = input("Enter your last name : ") 
+print(lastname[::-1] + " " + firstname[::-1]) 
+Enter your first name : James 
+Enter your last name : Bond 
+dnoB semaJ 
+Q10 Write a Python program to print the calendar of a given month and year. 
+import calendar 
+year = int(input("Enter the year : ")) 
+month = int(input("Enter the month : ")) 
+print(calendar.month(year, month)) 
+Enter the year : 2022 
+Enter the month : 07 
+ July 2022 
+Mo Tu We Th Fr Sa Su 
+ 1 2 3 
+ 4 5 6 7 8 9 10 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+Q11 Write a Python program to check whether a specified value is contained in a group of values. Test Data: 3 -> [1, 5, 8, 3]: True -1 -> [1, 5, 8, 3]: False 
+def container(data, n): 
+for value in data: 
+if n == value:
+return True 
+return False 
+print("3 is present so",container([1, 5, 8, 3], 3)) 
+print("-1 is not present so" ,container([1,5, 8, 3], -1)) 
+3 is present so True 
+-1 is not present so False 
+Q12 Write a Python program to get OS name, platform and release information. 
+import platform 
+import os 
+print("Name of the OS is:",os.name) 
+print("\nName of the OS system:",platform.system()) 
+print("\nVersion of the OS:",platform.release()) 
+Name of the OS is: posix 
+Name of the OS system: Linux 
+Version of the OS: 5.4.188+ 
+USER DEFINED FUNCTIONS (RECURSION, ARGUMENT PASSING, SCOPING) : 
+Q13. Write a function to find out x^y. Function should find out the square of x in case of default argument passing. 
+def pow(x,y=2): 
+print("The answer is",x**y) 
+pow(3) 
+pow(3,4) 
+The answer is 9 
+The answer is 81 
+Q14. Write a function to find out the factorial of a given number. I) without recursion II) with recursion 
+#I) without recursion 
+def fact(n): 
+f=1 
+for i in range(1,n+1): 
+f=f*n 
+n-=1 
+print("The factorial is: ",f) 
+fact(5) 
+The factorial is: 120
+#II) with recursion 
+def fact(n): 
+if n == 1: 
+return 1 
+else: 
+return n*(fact(n-1)) 
+fact(5) 
+120 
+Q15. Write a program to find out Fibonacci series using recursion and function as an object. 
+#using recursion 
+def fibonacci(n): 
+if(n <= 1): 
+return n 
+else: 
+return(fibonacci(n-1) + fibonacci(n-2)) 
+n = int(input("Enter number of terms : ")) 
+print("Fibonacci sequence : ") 
+for i in range(n): 
+print(fibonacci(i)) 
+Enter number of terms : 5 
+Fibonacci sequence :  
+0 
+1 
+1 
+2 
+3 
+#using function as an object 
+def fibonacci(n): 
+if(n <= 1): 
+return n 
+else: 
+return(fibonacci(n-1) + fibonacci(n-2)) 
+n = int(input("Enter number of terms : ")) 
+print("Fibonacci sequence : ") 
+for i in range(n): 
+print(fibonacci(i)) 
+def obj(): 
+return fibonacci(n) 
+Enter number of terms : 5 
+Fibonacci sequence :  
+0 
+1
+1 
+2 
+3 
+Q16. Demonstrate Function Scoping. 
+x = 15 
+def fun(): 
+global x 
+x = 20 
+fun() 
+print("Function Scoping :", x) 
+Function Scoping : 20 
+HIGHER ORDER FUNCTIONS (LAMDA, MAP, FILTER) 
+Q17. Write a Python program to check whether a specified value is contained in a group of values using lambda function. Test Data: 3 -> [1, 5, 8, 3] : True -1 -> [1, 5, 8, 3] : False 
+x=[1, 5, 8, 3] 
+l=lambda n: True if n in x else False 
+print("7 is not present so " , l(7)) 
+print("5 is present so " , l(5)) 
+7 is not present so False 
+5 is present so True 
+Q18. Write a Python program to find whether a given string ends with a given character using Lambda. 
+g=lambda x: True if x.endswith('O') else False 
+print(g("HellO")) 
+True 
+Q19. Prime or not prime. Input: L= [3,4,6,9,11] Output: L= [P, NP, NP, NP, P] using map function. 
+def prime(n): 
+if (n==1): 
+return "np" 
+elif (n==2): 
+return "p" 
+else: 
+for x in range(2,n): 
+if(n % x==0):
+return "np" 
+return "p" 
+l=[3,4,6,9,11] 
+x=map(prime,l) 
+print(list(x)) 
+['p', 'np', 'np', 'np', 'p'] 
+Q20. Write a python program to find out even numbers from a list using filter (). 
+l = [2,6,7,8,5] 
+f = filter(lambda y: y % 2 == 0, l) 
+print(list(f)) 
+[2, 6, 8] 
+MODULES 
+Q21. An interactive program where one module asks numbers from the user and the second module performs at least three arithmetic operations on them. 
+from google.colab import drive 
+drive.mount('/content/drive') 
+Mounted at /content/drive 
+import D 
+a=int(input("enter first no = ")) 
+b=int(input("enter second no = ")) 
+D.arith() 
+enter first no = 10 
+enter second no = 10 
+enter first no = 10 
+enter second no = 5 
+Sum: 15 
+Difference: 5 
+Product: 50 
+FILE HANDLING 
+Q22. A program to count the number of words, number of lines, occurrence of particular word, occurrence of particular character, number of blank spaces in a text file. 
+#Create a file 
+fname = input("Enter file name: ") #file1.txt 
+#Enter data in file
+fopen=open(fname,'w') 
+fopen.write("Hello World Hello") 
+fopen.close() 
+# 1st 
+fin = open("file1.txt","r") 
+str = fin.read() 
+l = str.split() 
+count_words = 0 
+for i in l: 
+count_words = count_words + 1 
+print("Total Number of words : ",count_words) fin.close() 
+# 2nd 
+with open("file1.txt", 'r') as fp: 
+lines = len(fp.readlines()) 
+print('Total Number of lines : ', lines) 
+# 3rd 
+k = 0 
+word=input("Enter word to be searched : ") 
+with open("file1.txt", 'r') as f: 
+for line in f: 
+words = line.split() 
+for i in words: 
+if (i == word): 
+k = k + 1 
+print("Occurrences of the particular word : ", k) 
+# 4th 
+char = input("Enter character to be searched : ") file=open("file1.txt",'r') 
+text=file.read() 
+k=text.count(char) 
+print("Occurrences of the particular char : ", k) 
+# 5th 
+file = open("file1.txt", "r") 
+count = 0 
+while True: 
+# this will read each character and store in char char = file.read(1) 
+if char.isspace(): 
+count += 1 
+if not char: 
+break 
+print("No of blankspaces in file : " , count) Enter file name: file1.txt
+Total Number of words : 3 
+Total Number of lines : 1 
+Enter word to be searched : Hello 
+Occurrences of the particular word : 2 
+Enter character to be searched : r 
+Occurrences of the particular char : 1 
+No of blankspaces in file : 2 
+Q23. A program to read a string from the user and append it into a file. 
+fname = input("Enter file name : ") #file2.txt fopen=open(fname,"a") 
+c=input("Enter string to append : ") 
+fopen.write(c) 
+fopen.close() 
+print("Contents of appended file : ") 
+file4=open(fname,'r') 
+line1=file4.readline() 
+while(line1!=""): 
+print(line1) 
+line1=file4.readline() 
+file4.close() 
+Enter file name : file2.txt 
+Enter string to append : Hoyyya 
+Contents of appended file :  
+Hoyyya 
+Q24. A program to copy the contents of one file into another. 
+# Create a Source file 
+sFile = input("Enter source file name: ") #source.txt # Enter data in file 
+fopen=open(sFile,'w') 
+fopen.write("Hello World Hello") 
+fopen.close() 
+# Create a destination file 
+dFile = input("Enter destination file name: ") #des.txt 
+fileHandle = open(sFile, "r") 
+texts = fileHandle.readlines() 
+fileHandle.close() 
+fileHandle = open(dFile, "w") 
+for s in texts: 
+fileHandle.write(s) 
+fileHandle.close() 
+fileHandle=open(dFile,"r") 
+texts = fileHandle.readlines() 
+print(texts)
+print("\nFile Copied Successfully!") 
+Enter source file name: source.txt 
+Enter destination file name: des.txt 
+['Hello World Hello'] 
+File Copied Successfully! 
+Q25. A program to read a text file and print all the numbers present in the text file. 
+# Create a file 
+fname = input("Enter file name: ") #file3.txt 
+# Enter data in file 
+fopen=open(fname,'w') 
+fopen.write("Duke1234") 
+fopen.close() 
+# read in file 
+print("Numbers are : ") 
+with open(fname, 'r') as f: 
+for i in f: 
+for num in i: 
+if(num.isdigit()): 
+print(num) 
+Enter file name: file3.txt 
+Numbers are :  
+1 
+2 
+3 
+4 
+Q26. A program to append the contents of one file to another file. 
+f1 = input("Enter file-1 name : ") 
+fin=open(f1,'w') 
+data1=input("Enter data in file1 : ") 
+fin.write(data1) 
+fin.close() 
+f2 = input("Enter file-2 name : ") 
+fout = open(f2, "a") 
+data2=input("Enter data in file2 : ") 
+data=data1+data2 
+fout.write(data) 
+fout.close() 
+fout=open(f2,'r') 
+text=fout.read()
+print(text) 
+print("\nFile content appended successfully") 
+Enter file-1 name : app1.txt 
+Enter data in file1 : Aloha 
+Enter file-2 name : app2.txt 
+Enter data in file2 : , Hoyya 
+Aloha , Hoyya 
+File content appended successfully 
+Q27. A program to read a file and capitalize the first letter of every word in the file. 
+# Create a file 
+fname = input("Enter file name: ") #cap.txt 
+# Enter data in file 
+fopen=open(fname,'w') 
+fopen.write("hello") 
+fopen.close() 
+# Capitalize Every first Letter 
+fopen = open('cap.txt', 'r') 
+for line in fopen: 
+output = line.title() 
+print(output) 
+Enter file name: cap.txt 
+Hello 
+Q28. A program to read the contents of a file in reverse order. 
+# Create a file 
+fname = input("Enter file name: ") #reverse.txt 
+# Enter data in file 
+fopen=open(fname,'w') 
+fopen.write(" World \n Hello ") 
+fopen.close() 
+# Read the file in Reverse Order 
+for line in reversed(list(open(fname))): 
+print(line.rstrip()) 
+Enter file name: reverse.txt 
+ Hello 
+ World 
+Collection Object Programs: 
+Q29. Write a Python program which accepts a sequence of comma-separated numbers from the user and generate a list and a tuple with those numbers.
+values = input("Enter numbers seprated by comma : ") 
+list = values.split(",") 
+tuple = tuple(list) 
+print('List : ',list) 
+print('Tuple : ',tuple) 
+Enter numbers seprated by comma : 3,10,5,19 
+List : ['3', '10', '5', '19'] 
+Tuple : ('3', '10', '5', '19') 
+Q30. Write a Python program to display the first and last colours from the following list. [orange, purple, red, yellow, blue] 
+list=['orange', 'purple',' red', 'yellow','blue'] 
+print(list[0:5:4]) 
+['orange', 'blue'] 
+Q31. Write a Python program to concatenate all elements in a list into a string and return it. 
+def concatenate_data(list): 
+result= '' 
+for element in list: 
+result += str(element) 
+return result 
+print(concatenate_data(['hello', 'have','a', 'geeky', 'day'])) 
+hellohaveageekyday 
+Q32. Write a Python program to print out a set containing all the colours from color_list_1 which are not present in color_list_2. 
+Test Data: color_list_1 = set (["White", "Black", "Red"]) color_list_2 = set (["Red", "Green"]) Expected Output: {'Black', 'White'} 
+list1 = set(["White", "Black", "Red"]) 
+list2 = set(["Red", "Green"]) 
+print("Colors present in list 1 but not in list 2 are : ",list1.difference(list2)) Colors present in list 1 but not in list 2 are : {'Black', 'White'} 
+Q33. Write a Python script to print a dictionary where the keys are numbers between 1 and 15 (both included) and the values are squares of keys. Sample Dictionary: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225}
+d=dict() 
+for x in range(1,16): 
+d[x]=x**2 
+print(d) 
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 14 
+Q34.Write a menu driven program to implement the following methods on List. (1) Create (2) Update particular element of list (3) Append to the list (4) Delete whole list (5) Delete particular element (6) Sort the list (7) Find length 
+list1 = [] 
+print("1. Create a list") 
+print("2. Update element in list") 
+print("3. Append to list") 
+print("4. Delete whole list") 
+print("5. Delete particular element") 
+print("6. Sort the list") 
+print("7. Find length of list") 
+print("8. Exit") 
+while True: 
+ch = int(input("\nEnter choice = ")) 
+if ch == 1: 
+print("Enter the elements: ") 
+list1=list(map(int,input().split())) 
+print("List Created:",list1) 
+elif ch == 2: 
+loc,val=map(int,input("Enter index and value: ").split()) 
+list1[loc]=val 
+print("List after update:",list1) 
+elif ch == 3: 
+val = int(input("Enter an element to be appended: ")) 
+list1.append(val) 
+print("List after append:", list1) 
+elif ch == 4: 
+list1.clear() 
+print("List deleted successfully") 
+print(list1) 
+elif ch == 5: 
+val = int(input("Enter an element want to delete: ")) 
+list1.remove(val) 
+print("List after deletion:", list1) 
+elif ch == 6:
+list1.sort() 
+print("List in ascending order:",list1) list1.sort(reverse=True) 
+print("List in descending order:",list1) 
+elif ch == 7: 
+print("Length of list:",len(list1)) 
+elif ch == 8: 
+print("Exit") 
+break 
+else: 
+print("Invalid choice, Please try again") 
+1. Create a list 
+2. Update element in list 
+3. Append to list 
+4. Delete whole list 
+5. Delete particular element 
+6. Sort the list 
+7. Find length of list 
+8. Exit 
+Enter choice = 1 
+Enter the elements:  
+2 4 8 1 3 
+List Created: [2, 4, 8, 1, 3] 
+Enter choice = 2 
+Enter index and value: 0 7 
+List after update: [7, 4, 8, 1, 3] 
+Enter choice = 3 
+Enter an element to be appended: 10 List after append: [7, 4, 8, 1, 3, 10] 
+Enter choice = 5 
+Enter an element want to delete: 1 
+List after deletion: [7, 4, 8, 3, 10] 
+Enter choice = 6 
+List in ascending order: [3, 4, 7, 8, 10] List in descending order: [10, 8, 7, 4, 3] 
+Enter choice = 7 
+Length of list: 5 
+Enter choice = 4 
+List deleted successfully 
+[] 
+Enter choice = 8 
+Exit
+Q35. Write a menu driven program to implement the following methods on set. (1) Create (2) Update particular element of set (3) Append to the set (4) Delete whole set (5) Delete particular element (6) Sort the set (7) Find length 
+set_x={} 
+print("1. Create a set") 
+print("2. Update particular element in set") 
+print("3. Append to set") 
+print("4. Delete whole set") 
+print("5. Delete particular element") 
+print("6. Sort the set") 
+print("7. Find length of set") 
+print("8. Exit") 
+while True: 
+ch = int(input("\nEnter choice = ")) 
+if ch == 1: 
+set_x=set(map(int,input("Enter the elements: ").split())) 
+print("Set Created:",set_x) 
+elif ch == 2: 
+set_y=set(map(int,input("Enter the elements: ").split())) 
+set_x.update(set_y) 
+print("Set after update:",set_x) 
+elif ch == 3: 
+y=int(input("Enter a element:")) 
+set_x.add(y) 
+print(set_x) 
+elif ch == 4: 
+if(set_x=={}): 
+print("already empty") 
+else: 
+set_x.clear() 
+print("Set Deleted") 
+elif ch == 5: 
+y=int(input("Enter the element :")) 
+set_x.remove(y) 
+print(set_x) 
+elif ch == 6: 
+print("Sorted set is : ", sorted(set_x)) 
+elif ch == 7: 
+print("The length of set is:", len(set_x)) 
+elif ch == 8: 
+print("Exit")
+break 
+else: 
+print("Invalid choice, Please try again") 
+1. Create a set 
+2. Update particular element in set 
+3. Append to set 
+4. Delete whole set 
+5. Delete particular element 
+6. Sort the set 
+7. Find length of set 
+8. Exit 
+Enter choice = 1 
+Enter the elements: 2 5 7 8 9 
+Set Created: {2, 5, 7, 8, 9} 
+Enter choice = 2 
+Enter the elements: 0 1 3 
+Set after update: {0, 1, 2, 3, 5, 7, 8, 9} 
+Enter choice = 3 
+Enter a element:10 
+{0, 1, 2, 3, 5, 7, 8, 9, 10} 
+Enter choice = 5 
+Enter the element :5 
+{0, 1, 2, 3, 7, 8, 9, 10} 
+Enter choice = 6 
+Sorted set is : [0, 1, 2, 3, 7, 8, 9, 10] 
+Enter choice = 7 
+The length of set is: 8 
+Enter choice = 4 
+Set Deleted 
+Enter choice = 8 
+Exit 
+Q36. Write a menu driven program to implement following methods on Dictionary. (1) Create (2) Update particular element of dictionary (3) Append to the dictionary (4) Delete whole dictionary (5) Delete particular element (6) Sort the dictionary (7) Find length 
+dict1={} 
+print("1. Create Dictionary") 
+print("2. Update element in dictionary") 
+print("3. Append to dictionary") 
+print("4. Delete whole dictionary") 
+print("5. Delete particular element") 
+print("6. Sort the dictionary") 
+print("7. Find length of dictionary") 
+print("8. Exit")
+while True: 
+ch = int(input("\nEnter choice = ")) 
+if ch == 1: 
+val=input("Enter value : ") 
+key=int(input("Enter the key : ")) 
+dict1[key]=val 
+print("Dictionary Created : ",dict1) 
+elif ch == 2: 
+val=input("Enter value : ") 
+key=int(input("Enter the key : ")) 
+dict1[key]=val 
+print("Updated Dictionary : ",dict1) 
+elif ch == 3: 
+val = input("Enter the value:") 
+key = int(input("Enter the key: ")) 
+dict1[key] = val 
+print("Appended Dictionary : ",dict1) 
+elif ch == 4: 
+if(dict1=={}): 
+print("Dictionary is empty") 
+else: 
+dict1.clear() 
+print("Dictionary Deleted") 
+print(dict1) 
+elif ch == 5: 
+key = int(input("Enter the key to be popped: ")) dict1.pop(key) 
+print("Dictionary after deleting element : ", dict1) 
+elif ch == 6: 
+print(sorted(dict1.items())) 
+elif ch == 7: 
+print("The length of dictionary is:", len(dict1)) 
+elif ch == 8: 
+print("Exit") 
+break 
+else: 
+print("Invalid choice, Please try again") 
+1. Create Dictionary 
+2. Update element in dictionary 
+3. Append to dictionary 
+4. Delete whole dictionary 
+5. Delete particular element 
+6. Sort the dictionary
+7. Find length of dictionary 
+8. Exit 
+Enter choice = 1 
+Enter value : A 
+Enter the key : 1 
+Dictionary Created : {1: 'A'} 
+Enter choice = 1 
+Enter value : B 
+Enter the key : 2 
+Dictionary Created : {1: 'A', 2: 'B'} 
+Enter choice = 2 
+Enter value : C 
+Enter the key : 2 
+Updated Dictionary : {1: 'A', 2: 'C'} 
+Enter choice = 3 
+Enter the value:D 
+Enter the key: 0 
+Appended Dictionary : {1: 'A', 2: 'C', 0: 'D'} 
+Enter choice = 5 
+Enter the key to be popped: 2 
+Dictionary after deleting element : {1: 'A', 0: 'D'} 
+Enter choice = 6 
+[(0, 'D'), (1, 'A')] 
+Enter choice = 7 
+The length of dictionary is: 2 
+Enter choice = 4 
+Dictionary Deleted 
+{} 
+Enter choice = 8 
+Exit 
+Q37. Do following: 1) Define and Call user defined function for n numbers one by one. 2) Check if each element is Even or Odd and Print it. (Use Class Variable) 3) Print List of even numbers and odd numbers. 
+class even_odd: 
+# Initializing List 
+a_list=[] 
+even=[] 
+odd=[] 
+# Calling User Defined function 
+def inp(num): 
+num=int(input("Enter the number : ")) 
+e1.a_list.append(num)
+# Creating Object 
+e1=even_odd() 
+size=int(input("Enter how many numbers you want in the list : ")) 
+# Even or odd logic 
+for i in range(1,size+1): 
+e1.inp() 
+for i in e1.a_list: 
+if (i % 2 == 0): 
+print(i," is even ") 
+e1.even.append(i) 
+else: 
+print(i," is odd ") 
+e1.odd.append(i) 
+# Printing the Even List and Odd List 
+print(e1.even) 
+print(e1.odd) 
+print('Total number of even = ', len(e1.even)) 
+print('Total number of even = ', len(e1.odd)) 
+Enter how many numbers you want in the list : 5 
+Enter the number : 21 
+Enter the number : 22 
+Enter the number : 35 
+Enter the number : 36 
+Enter the number : 40 
+21 is odd  
+22 is even  
+35 is odd  
+36 is even  
+40 is even  
+[22, 36, 40] 
+[21, 35] 
+Total number of even = 3 
+Total number of even = 2 
+Object- Orientation Programs: 
+Q40. Implement following inheritance: (1)Single (2) Multiple (3) Multilevel (4) Hybrid 
+# Single Inheritance 
+class Parent: 
+def parent(self): 
+print("Parent class") 
+class Child(Parent): 
+def child(self): 
+print("Child class") 
+o = Child()
+o.parent() 
+o.child() 
+Parent class 
+Child class 
+# Multiple Inheritance 
+class Parent1: 
+def parent1(self): 
+print("Parent-1 Class") 
+class Parent2: 
+def parent2(self): 
+print("Parent-2 class") 
+class Child(Parent , Parent2): 
+def child(self): 
+print("Child Class deriving Parent-1 & Parent-2") o = Child() 
+o.parent1() 
+o.parent2() 
+o.child() 
+Parent Class 
+Parent-2 class 
+Child Class deriving Parent-1 & Parent-2 
+# Multilevel Inheritance 
+class Parent1: 
+def parent1(self): 
+print("Parent-1 Class") 
+class Parent2(Parent1): 
+def parent2(self): 
+print("Parent-2 class deriving Parent-1") 
+class Child(Parent2): 
+def child(self): 
+print("Child Class deriving Parent-1 & Parent-2") o = Child() 
+o.parent1() 
+o.parent2() 
+o.child() 
+Parent-1 Class 
+Parent-2 class deriving Parent-1 
+Child Class deriving Parent-1 & Parent-2 
+# Hybrid Inheritance 
+class Parent:
+def parent(self): 
+print("Parent class") 
+class Child1(Parent): 
+def child1(self): 
+print("Child1 class deriving Parent class") 
+class Child2(Parent): 
+def child2(self): 
+print("Child2 class deriving Parent class") 
+class GrandChild(Child1 , Child2): 
+def grandChild(self): 
+print("Grandchild class deriving Child1 & Child2 class") 
+o = GrandChild() 
+o.parent() 
+Parent class 
+Q41. Demonstrate Overriding and methods to overcome. 
+# parent class 
+class Parent: 
+# function breath 
+def breathe(self): 
+print("I breathe oxygen.") 
+# function feed 
+def feed(self): 
+print("I eat non - veg") 
+# child class 
+class child(Parent): 
+# function feed 
+def feed(self): 
+print("I eat veg.") 
+c = child() 
+c.feed() 
+# Some other method 
+c.breathe() 
+I eat veg. 
+I breathe oxygen. 
+Data Structures Programs:
+Q42. Implement following searching techniques: (1) Linear (2) Binary 
+#linear search 
+l1=[10,20,30,40,50] 
+def linear_search(): 
+num=int(input("Enter the number to search: ")) 
+if num in l1: 
+for i in range(0,len(l1)): 
+if l1[i]==num: 
+print("It is at index: ",i) 
+else: 
+print("element not present") 
+linear_search() 
+Enter the number to search: 30 
+It is at index: 2 
+# BINARY SEARCH 
+pos=-1 
+def search(list,key): 
+left = 0 
+right = len(list)-1 
+while left<=right: 
+mid = (left + right) // 2 
+if list[mid] == key: 
+globals() ["pos"] = mid 
+return True 
+else: 
+if list[mid]< key: 
+left = mid 
+else: 
+right = mid 
+list=[2,3,4,5,6] 
+key=3 
+if(search(list,key)): 
+print('Element Found at', pos ) 
+else: 
+print('Element Not Found') 
+Element Found at 1 
+Q43. Implement following sorting algorithms. (1) Selection (2) Merge (3) Tim
+# Selection Sort 
+def sort(num): 
+for i in range(5): 
+min = i 
+for j in range(i,len(num)): 
+if num[j]<num[min]: 
+min = j 
+temp = num[i] 
+num[i] = num[min] 
+num[min] = temp 
+num =[2,4,3,1,6] 
+sort(num) 
+print(num) 
+[1, 2, 3, 4, 6] 
+def mergeSort(myList): 
+if len(myList) > 1: 
+mid = len(myList) // 2 
+left = myList[:mid] 
+right = myList[mid:] 
+# Recursive call on each half 
+mergeSort(left) 
+mergeSort(right) 
+# Two iterators for traversing the two halves i = j = 0 
+# Iterator for the main list 
+k = 0 
+while i < len(left) and j < len(right): 
+if left[i] <= right[j]: 
+# The value from the left half has been used myList[k] = left[i] 
+# Move the iterator forward 
+i += 1 
+else: 
+myList[k] = right[j] 
+j += 1 
+# Move to the next slot 
+k += 1 
+# For all the remaining values 
+while i < len(left): 
+myList[k] = left[i] 
+i += 1
+k += 1 
+while j < len(right): 
+myList[k]=right[j] 
+j += 1 
+k += 1 
+myList = [20,30,10,50,40] 
+mergeSort(myList) 
+print(myList) 
+[10, 20, 30, 40, 50] 
+# Tim Sort 
+RUN = 32 
+def Insertion(arr, left, right): for i in range(left + 1, right + 1): temp = arr[i] 
+j = i - 1 
+while arr[j] > temp and j >= left: arr[j + 1] = arr[j] 
+j -= 1 
+arr[j + 1] = temp 
+def merge(arr, l, m, r): 
+len1, len2 = m - l + 1, r - m 
+left, right = [],[] 
+for i in range(0, len1): 
+left.append(arr[l + i]) 
+for i in range(0, len2): 
+right.append(arr[m + 1 + i]) 
+i, j, k = 0, 0, 1 
+while i < len1 and j < len2: 
+if left[i] <= right[j]: 
+arr[k] = left[i] 
+i += 1 
+else: 
+arr[k] = right[j] 
+j += 1 
+k += 1 
+while i < len1: 
+arr[k] = left[i] 
+k += 1 
+i += 1 
+while j < len2: 
+arr[k] = right[j] 
+k += 1 
+j += 1 
+S 
+def timSort(arr, n):
+for i in range(0, n, RUN): 
+Insertion(arr,i,min((i + 31), (n - 1))) 
+size = RUN 
+while size < n: 
+for left in range(0, n, 2 * size): 
+mid = left + size - 1 
+right = min((left + 2 * size - 1),(n - 1)) merge(arr, left, mid, right) 
+size = 2 * size 
+def printArray(arr, n): 
+for i in range(0, n): 
+print(arr[i], end = " ") 
+print() 
+if __name__ == "__main__": 
+arr = [30,20,10,50,40] 
+n = len(arr) 
+print("The array is: ") 
+printArray(arr, n) 
+timSort(arr, n) 
+print("Array after sorting: ") 
+printArray(arr, n) 
+The array is:  
+30 20 10 50 40  
+Array after sorting:  
+10 20 30 40 50  
+Q44. Implement a Singly Linked List. (Insert, Display, Delete). 
+# Linked List 
+class Node: 
+def __init__(self, data): 
+self.data = data 
+self.next = None 
+class LinkedList: 
+def printList(self,first): 
+self.first = first 
+temp=first 
+while (temp): 
+print (temp.data) 
+temp = temp.next 
+llist = LinkedList() 
+first = Node(10) 
+second = Node(20) 
+third = Node(30) 
+first.next=second 
+second.next = third
+llist.printList(first) 
+10 
+20 
+30 
+Regular Expressions Programs: 
+Q45. Implement following Regular Expressions. 
+1) Write a Python Program that searches a string to see if it starts with "The '' and ends with "Indus". 
+2) Write a Python Program that returns a match where the string contains a white space character. 
+3) Write a Python program that matches a string that has an a followed by three 'b'. 
+4)Write a Regular Expression to find Words or strings having three characters and with ‘m’ as first character. 
+5) Write a regular expression to retrieve all words starting with “a”. 
+6) Write a regular expression to retrieve all words starting with a numeric digit. 7) Write a regular expression to retrieve all words having 5 character length. 8) Write a regular expression to retrieve all words with 3,4 or 5 character length. [a-z]{3,5} 9) Write a regular expression to retrieve all single digits from a string. 
+10) Write a regular expression to retrieve the last word from the string. 11) Write a regular expression to retrieve all words starting with ‘an’ or ‘ak’. 12) Write a regular expression to retrieve DOB from the string. 
+#1 
+import re 
+str="The name of college is Indus" 
+x=re.findall("^The.*Indus$",str) 
+print(x) 
+['The name of college is Indus'] 
+#2 
+import re 
+str="Good day" 
+x=re.findall(".*\s.*",str) 
+print(x) 
+['Good day']
+#3 
+import re 
+str = "Abbbb ABBBB ABBB" 
+x = re.findall("AB{3}",str) 
+print(x) 
+['ABBB', 'ABBB'] 
+#4 
+import re 
+str = "many moon massive mine" x = re.findall(r"\b[m]\w{3}\b",str) print(x) 
+['many', 'moon', 'mine'] 
+#5 
+import re 
+str = "alive is okay aware all" x = re.findall(r"\b[a]\w*\b",str) print(x) 
+['alive', 'aware', 'all'] 
+#6 
+import re 
+str="9times aaa 5bb" 
+x=re.findall(r"\b[\d]\w*\b",str) print(x) 
+['9times', '5bb'] 
+#7 
+import re 
+str = "man moon massive dam me makes" x = re.findall(r"\b\w{5}\b",str) print(x) 
+['makes'] 
+#8 
+import re 
+str = "man moon massive dam me makes" x = re.findall(r"\b\w{3,5}\b",str) print(x) 
+['man', 'moon', 'dam', 'makes'] 
+#9 
+import re
+str="9times aaa 5bb" 
+x=re.findall(r"\d",str) 
+print(x) 
+['9', '5'] 
+#10 
+import re 
+str = "Hello world hii" 
+x=re.findall(r"\w+\Z",str) 
+print(x) 
+['hii'] 
+#11 
+import re 
+str = "annotation about akk" 
+x=re.findall(r"\bak\w*|an\w*\b",str) 
+print(x) 
+['annotation', 'akk'] 
+#12 
+import re 
+str = "01/11/1999 born 10/12/1999" 
+x=re.findall("\d{2}/\d{2}/\d{4}",str) 
+print(x) 
+['01/11/1999', '10/12/1999'] 
+Networking and Multithreading Programs: 
+Q46. Implement Chat Application. 
+# CLIENT 
+import socket 
+def client_program(): 
+client_socket = socket.socket() # instantiate 
+client_socket.connect((socket.gethostname(), 5000)) # connect to the server message = input(" -> ") # take input 
+while message.lower().strip() != 'bye': 
+client_socket.send(message.encode()) # send message 
+data = client_socket.recv(1024).decode() # receive response print('User - 1 (Server-Side): ' + data) # show in terminal 
+message = input(" -> ") # again take input 
+client_socket.close() # close the connection
+if __name__ == '__main__': 
+client_program() 
+# ------ OUPTUT---------- 
+# CLIENT SIDE: 
+# Hi User 1 
+# User-1: How u doin ?? 
+# SERVER 
+import socket 
+def server_program(): 
+server_socket = socket.socket() # get instance 
+server_socket.bind((socket.gethostname(),5000)) # bind host address and port to 
+server_socket.listen(2) # No of clients 
+conn , address = server_socket.accept() # accept new connection print("Server Started : ") 
+while True: 
+data = conn.recv(1024).decode() 
+if not data: 
+break 
+print("User - 2 (Client-Side): " + str(data)) 
+data = input(' -> ') 
+conn.send(data.encode()) # send data to the client 
+conn.close() # close the connection 
+if __name__ == '__main__': 
+server_program() 
+# ------ OUPTUT---------- 
+#SERVER SIDE: 
+# User-2: Hi User 1 
+# How u doin ?? 
+Q47. Demonstrate multithreading. 
+import threading 
+def cube(num): 
+print(num * num * num) 
+def square(num): 
+print(num * num) 
+# create the thread 
+t1 = threading.Thread(target=square, args=(5,)) 
+t2 = threading.Thread(target=cube, args=(5,))
+# start the thread t1 
+t1.start() 
+# start the thread t2 
+t2.start() 
+# wait until t1 is completed 
+t1.join() 
+# wait until t2 is completed 
+t2.join() 
+# both threads completed 
+print('Done!!') 
+25 
+125 
+Done!! 
+GUI Using Tkinter: 
+Q48. Create a tkinter GUI to implement a calculator. 
+from tkinter import * 
+root=Tk() 
+root.title('Calculator') 
+root.geometry('200x200') 
+def add(): 
+res=int(n1.get())+int(n2.get()) 
+ans.set(res) 
+def sub(): 
+res=int(n1.get())-int(n2.get()) 
+ans.set(res) 
+def mul(): 
+res=int(n1.get())*int(n2.get()) 
+ans.set(res) 
+def div(): 
+res=int(n1.get())/int(n2.get()) 
+ans.set(res) 
+ans=StringVar() 
+Label(root,text="Number 1: ").grid(row=1,column=1) Label(root,text="Number 2: ").grid(row=2,column=1) Label(root,text="Result: ").grid(row=3,column=1) Label(root,text="",textvariable=ans).grid(row=3,column=2) n1=Entry(root) 
+n2=Entry(root) 
+n1.grid(row=1,column=2) 
+n2.grid(row=2,column=2) 
+Button(root,text="Add", command=add).grid(row=4,column=1) Button(root,text="Subtract", command=sub).grid(row=4,column=2)
+Button(root,text="Multiply", command=mul).grid(row=5,column=1) 
+Button(root,text="Divide", command=div).grid(row=5,column=2) 
+mainloop() 
+
+Q49. Create a dropdown list to select a city from the given list of cities. 
+from tkinter import * 
+win= Tk() 
+win.geometry("500x500") 
+menu= StringVar() 
+menu.set("Select Any Citites") 
+OptionMenu(win, menu,"Ahmedabad", "Baroda","Pune","Mumbai","Bangalore","Surat").pack win.mainloop()
+
+Q50. Write a tkinter code to place an image/picture in the window. 
+from tkinter import * 
+from PIL import ImageTk, Image 
+win = Tk() 
+win.geometry("700x500") 
+frame = Frame(win, width=600, height=400) 
+frame.pack() 
+frame.place(anchor='center', relx=0.5, rely=0.5) img = ImageTk.PhotoImage(Image.open("forest.jpg")) label = Label(frame, image = img) 
+label.pack() 
+win.mainloop() 
+Q51. Create Registration window. 
+from tkinter import * 
+from tkinter import ttk 
+window = Tk() 
+window.title("Welcome to TutorialsPoint") 
+window.geometry('400x400') 
+a = Label(window ,text = "First Name").grid(row = 0,column = 0) b = Label(window ,text = "Last Name").grid(row = 1,column = 0) c = Label(window ,text = "Email Id").grid(row = 2,column = 0) a1 = Entry(window).grid(row = 0,column = 1) 
+b1 = Entry(window).grid(row = 1,column = 1) 
+c1 = Entry(window).grid(row = 2,column = 1) 
+btn = ttk.Button(window ,text="Submit").grid(row=4,column=0) window.mainloop()
+
+GUI Using Turtle: 
+52. Using the Turtle module in python, Draw Square, Rectangle, Star and explore various attributes with it (ex: background color, line fill, border color, etc...) 
+Square 
+import turtle 
+wn=turtle.Screen() 
+wn.bgcolor("lightblue") 
+turtle.pencolor('white') 
+turtle.fillcolor("green") 
+turtle.width(4) 
+turtle.begin_fill() 
+for i in range(4): 
+turtle.forward(80) 
+turtle.left(90) 
+turtle.end_fill() 
+turtle.exitonclick()
+
+Rectangle 
+import turtle 
+wn=turtle.Screen() 
+wn.bgcolor("brown") 
+turtle.pencolor('black') 
+turtle.fillcolor("white") 
+turtle.begin_fill() 
+for _ in range(4): 
+if _% 2 == 0: 
+turtle.forward(100) 
+turtle.left(90) 
+else: 
+turtle.forward(50) 
+turtle.left(90) 
+turtle.end_fill() 
+turtle.exitonclick()
+
+Star 
+import turtle 
+wn=turtle.Screen() 
+wn.bgcolor("beige") 
+turtle.pencolor('blue') 
+turtle.fillcolor("orange") 
+turtle.begin_fill() 
+for i in range(5): 
+turtle.forward(150) 
+turtle.left(144) 
+turtle.end_fill() 
+turtle.exitonclick()
+
+Circle (Extra!!��) 
+import turtle 
+wn=turtle.Screen() 
+wn.bgcolor("yellow") 
+turtle.fillcolor("orange") 
+turtle.begin_fill() 
+t = turtle.Turtle() 
+r = 50 
+t.circle(r) 
+turtle.end_fill() 
+turtle.exitonclick()
+--------------------------------------------------------------------------- TclError Traceback (most recent call last) <ipython-input-1-2622817fbda2> in <module> 
+ 1 import turtle 
+----> 2 wn=turtle.Screen() 
+ 3 wn.bgcolor("yellow") 
+ 4 turtle.fillcolor("orange") 
+ 5 turtle.begin_fill() 
+Numpy 
+3 frames 
+/usr/lib/python3.7/tkinter/__init__.py in __init__(self, screenName, baseName, 53)a)Extract all odd numbers from the array using “where” clause. 
+className, useTk, sync, use) 
+ 2021 baseName = baseName + ext 
+ 2022 interactive = 0 
+-> 2023 self.tk = _tkinter.create(screenName, baseName, className, 
+# a 
+interactive, wantobjects, useTk, sync, use) 
+import numpy as np 
+ 2024 if useTk: 
+a=np.array([1,2,3,4,5]) 
+ 2025 self._loadtk() 
+b= np.where(a %2 != 0) 
+print(a[b]) 
+TclError: no display name and no $DISPLAY environment variable [1 3 5] 
+b) Replace all odd numbers in array with -1 
+# b 
+import numpy as np 
+a=np.array([1,2,3,4,5]) 
+a[a % 2==1]=-1 
+print(a) 
+[-1 2 -1 4 -1] 
+c) Convert a 1D array to a 2D array with 2 rows and 5 columns. 
+# c 
+arr = np.array([0, 1, 2, 3, 4, 5, 6, 7]) 
+arr_2d = np.reshape(arr, (4,2)) 
+print(arr_2d)
+--------------------------------------------------------------------------- NameError Traceback (most recent call last) <ipython-input-1-74abda50e10d> in <module> 
+ 1 # c 
+----> 2 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) 
+ 3 arr_2d = np.reshape(arr, (2, 2)) 
+ 4 print(arr_2d) 
+NameError: name 'np' is not defined 
+SEARCH STACK OVERFLOW 
+d) Get the common items between array1 and array2 Input: 
+array1 = [1,2,3,2,3,4,3,4,5,6] 
+array2 = [7,2,10,2,7,4,9,4,9,8] 
+Desired Output: 
+array([2, 4]) 
+array1=np.array([1,2,3,2,3,4,3,4,5,6]) 
+array2=[7,2,10,2,7,4,9,4,9,8] 
+print(np.intersect1d(array1,array2)) 
+[2 4] 
+e) Perform Matrix multiplication on 2 matrices. 
+# Program to multiply two matrices using nested for loops # 3x3 matrix 
+A = [[1,2,3], 
+[4,5,6], 
+[7,8,9]] 
+# 3x4 matrix 
+B = [[1,2,3,4], 
+[5,6,7,8], 
+[2,4,6,8]] 
+# result is 3x4 
+result = [[0,0,0,0], 
+[0,0,0,0], 
+[0,0,0,0]] 
+# iterate through rows of Matrix A 
+for i in range(len(A)): 
+# iterate through columns of Matrix B 
+for j in range(len(B[0])): 
+# iterate through rows of Matrix B 
+for k in range(len(B)): 
+result[i][j] += A[i][k] * B[k][j] 
+print('Multiplied Matrix:') 
+for r in result: 
+print(r) 
+Multiplied Matrix: 
+[17, 26, 35, 44] 
+[41, 62, 83, 104] 
+[65, 98, 131, 164]
+f) Using numpy and matplotlib/pylab generate bar plots for appropriate data. 
+import numpy as np 
+import matplotlib.pyplot as plt 
+data = [[30, 25, 50, 20], 
+[40, 23, 51, 17], 
+[35, 22, 45, 19]] 
+X = np.arange(4) 
+fig = plt.figure() 
+ax = fig.add_axes([0,0,1,1]) 
+ax.bar(X + 0.00, data[0], color = 'b', width = 0.25) ax.bar(X + 0.25, data[1], color = 'g', width = 0.25) ax.bar(X + 0.50, data[2], color = 'r', width = 0.25) plt.show() 
+54. Create a DataFrame fruits that looks like this: 
+import pandas as pd 
+data = [{'Apples' : 30, 'Bananas' : 21}] 
+df = pd.DataFrame(data) 
+print(df) 
+ Apples Bananas 
+0 30 21 
+55. Create a dataframe fruit_sales that matches the diagram below: 
+import pandas as pd 
+data = ({'Apples' : [35, 41], 'Bananas' : [21, 34]})
+df = pd.DataFrame(data, index = ['2017 sales', '2018 sales']) print(df) 
+ Apples Bananas 
+2017 sales 35 21 
+2018 sales 41 34 
+56. Create a variable ingredients with a Series that looks like: Flour 4 cups Milk 1 cup Eggs 2 large Spam 1 can Name: Dinner, dtype: object 
+import pandas as pd 
+bunch = ['4 cups', '1 cup', '2 large', '1 can'] 
+items = ['Flour', 'Milk', 'Eggs', 'Spam'] 
+df = pd.Series(bunch, index = items, name = "Dinner") 
+print(df) 
+Flour 4 cups 
+Milk 1 cup 
+Eggs 2 large 
+Spam 1 can 
+Name: Dinner, dtype: object 
+57. Download file name: winemag-data-130k-v2.csv and perform the following. 
+1) Display row number 25 
+2) Display column number 13 
+3) Display rows where country name = France 
+4) Display records where province=Michigan and taster_name=Alexander Peartree 5) Explore describe() for the generated dataframe. 
+1) 
+import pandas as pd 
+data=pd.read_csv('/content/drive/MyDrive/winemag-data-130k-v2.csv') row=data.iloc[25] 
+print(row.head())
+
+2) 
+import pandas as pd 
+data=pd.read_csv('/content/drive/MyDrive/winemag-data-130k-v2.csv') col=data.iloc[:,13] 
+print(col.head()) 
+
+3) 
+import pandas as pd 
+df=pd.read_csv('/content/drive/MyDrive/winemag-data-130k-v2.csv') res=df.loc[df['country']=='France'] 
+print(res.head(1)) 
+4) 
+import pandas as pd 
+df=pd.read_csv('/content/drive/MyDrive/winemag-data-130k-v2.csv') res=df.loc[(df['province']=='Michigan') & (df['taster_name']=='Alexander Peartree')] print(res.head(1))
+
+5) 
+import pandas as pd 
+df=pd.read_csv('/content/drive/MyDrive/winemag-data-130k-v2.csv') df.describe() 
+
+58. To display any Sports Scoreboard generate appropriate plot (line/bar/scatter, etc..) 
+import matplotlib.pyplot as plt 
+import numpy as np 
+#day one, the age and speed of 13 cars: 
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6]) 
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86]) 
+plt.scatter(x, y) 
+#day two, the age and speed of 15 cars:
+x = np.array([2,2,8,1,15,8,12,9,7,3,11,4,7,14,12]) y =np.array([100,105,84,105,90,99,90,95,94,100,79,112,91,80,85]) plt.scatter(x, y) 
+<matplotlib.collections.PathCollection at 0x7f77021a6d50> 
+Miscellaneous: 
+59. Basic Program of Flask. 
+from flask import Flask 
+app = Flask(__name__) 
+@app.route('/') 
+def index(): 
+return 'Hello World' 
+if __name__ == '__main__': 
+app.run(debug=True) 
+
+60. Basic Program of TensorFlow. 
+import tensorflow as tf 
+a = int(input("Enter number 1: ")) 
+b = int(input("Enter number 2: "))
+n1 = tf.Variable(a) 
+n2 = tf.Variable(b) 
+sum = tf.add(n1, n2) 
+print("Sum = " + str(sum)) 
+output : 
+Enter number 1: 1 
+Enter number 2: 2 
+Sum = tf.Tensor(3, shape=(), dtype=int32)
+Colab paid products - Cancel contracts here 
